@@ -6,7 +6,7 @@ import MeshPortalCard from '../ThreeFiberComponents/MeshPortalCard';
 import { TextLinesTranslateYtoVisibleDelay } from '../FramerAnimation/TextAnimations';
 import { useThemeContext } from '../../util/context';
 import meVidDrag from '../../assets/video/me_transparent_320x569.webm';
-
+import skybox from '../../assets/Skybox/anime_colorful_fantasy_ghibli.webp';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
@@ -224,9 +224,7 @@ const Contact = () => {
                 >
                   <OrbitControls enableZoom={false} enablePan={false} />
 
-                  <MeshPortalCard
-                    texture={'Skybox/anime_colorful_fantasy_ghibli.png'}
-                  >
+                  <MeshPortalCard texture={skybox}>
                     <MeWaving position={[0, -1, 0]} />
                   </MeshPortalCard>
                 </Canvas>

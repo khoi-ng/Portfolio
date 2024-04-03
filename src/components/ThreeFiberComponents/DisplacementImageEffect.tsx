@@ -1,7 +1,7 @@
 import { shaderMaterial, useTexture } from '@react-three/drei';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { useRef, useState } from 'react';
-
+import displacementImage from '../../assets/displacement/11.jpg';
 import * as easing from 'maath/easing';
 import { DemoData } from '../../shared/demoData';
 
@@ -62,7 +62,7 @@ function ImageWithEffect({
   const [texture1, texture2, dispTexture] = useTexture([
     src,
     src2,
-    '/img/displacement/11.jpg',
+    displacementImage,
   ]);
   const [hovered, setHover] = useState(false);
 

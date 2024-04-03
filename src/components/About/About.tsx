@@ -4,7 +4,7 @@ import { useThemeContext } from '../../util/context';
 import { motion, useInView } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import useMousePosition from '../../util/useMousePostion';
-import aboutMeBackground from '../../assets/me_holding_Laptop_background.png';
+import aboutMeBackground from '../../assets/me_holding_Laptop_background.webp';
 
 export default function About() {
   const [isHovered, setIsHovered] = useState(false);

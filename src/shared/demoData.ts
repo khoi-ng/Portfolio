@@ -1,9 +1,9 @@
-import placeHolderImage from '../../src/assets/demosImg/ben-white-7BiMECHFgFY-unsplash.png';
-import placeHolderImage2 from '../../src/assets/demosImg/jc-gellidon-TPZNooS1Meg-unsplash.png';
-import placeHolderImage3 from '../../src/assets/demosImg/tide_trasher_x-MPuoF1Vz9pk-unsplash.png';
-import placeHolderImage4 from '../../src/assets/demosImg/force-majeure-00tlC0Clfrs-unsplash.png';
-import placeHolderImage5 from '../../src/assets/demosImg/maksim-larin-1vy2QcZd5FU-unsplash.png';
-import placeHolderImage6 from '../../src/assets/demosImg/domino-164_6wVEHfI-unsplash.png';
+import placeHolderImage from '../../src/assets/demosImg/ben-white-7BiMECHFgFY-unsplash.webp';
+import placeHolderImage2 from '../../src/assets/demosImg/jc-gellidon-TPZNooS1Meg-unsplash.webp';
+import placeHolderImage3 from '../../src/assets/demosImg/tide_trasher_x-MPuoF1Vz9pk-unsplash.webp';
+import placeHolderImage4 from '../../src/assets/demosImg/force-majeure-00tlC0Clfrs-unsplash.webp';
+import placeHolderImage5 from '../../src/assets/demosImg/maksim-larin-1vy2QcZd5FU-unsplash.webp';
+import placeHolderImage6 from '../../src/assets/demosImg/domino-164_6wVEHfI-unsplash.webp';
 
 export interface DemoData {
   id: number;

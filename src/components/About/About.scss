@@ -67,7 +67,7 @@
       -ms-user-select: none;
       position: absolute;
       inset: 0;
-      background-image: url('../../assets/me_holding_Laptop_blackWhite.png');
+      background-image: url('../../assets/me_holding_Laptop_blackWhite.webp');
       background-size: cover;
     }
     .color-img {
@@ -79,7 +79,7 @@
       -ms-user-select: none;
       position: absolute;
       inset: 0;
-      background-image: url('../../assets/me_holding_Laptop_blackWhite.png');
+      background-image: url('../../assets/me_holding_Laptop_blackWhite.webp');
       background-size: cover;
     }
   }
@@ -107,20 +107,20 @@
       .gray-img {
         position: absolute;
         inset: 0;
-        background-image: url('../../assets/me_holding_Laptop_blackWhite.png');
+        background-image: url('../../assets/me_holding_Laptop_blackWhite.webp');
         background-size: cover;
       }
       .color-img {
         position: absolute;
         inset: 0;
-        background-image: url('../../assets/me_holding_Laptop.png');
+        background-image: url('../../assets/me_holding_Laptop.webp');
         background-size: cover;
 
-        -webkit-mask-image: url('../../assets/about-mask.png');
+        -webkit-mask-image: url('../../assets/about-mask.webp');
         -webkit-mask-size: cover;
         -webkit-mask-position: 0% 0%;
 
-        mask-image: url('../../assets/about-mask.png');
+        mask-image: url('../../assets/about-mask.webp');
         mask-size: cover;
         mask-position: 0% 0%;
 

@@ -1,6 +1,6 @@
 import './Header.scss';
 
-import leaf1 from '../../assets/leafs/leaf.png';
+import leaf1 from '../../assets/leafs/leaf.webp';
 // import { FaRegLightbulb } from 'react-icons/fa';
 // import { BsLightbulbOffFill } from 'react-icons/bs';
 import { TbBulbOff, TbBulb } from 'react-icons/tb';
@@ -10,21 +10,21 @@ import { TextLinesTranslateYtoVisibleDelay } from '../FramerAnimation/TextAnimat
 
 // ------------------ Light Mode ------------------------
 
-import parallaxForeGroundLeafs from '../../assets/day/parallaxLeafsRight.png';
-import parallaxForeGroundLeafsLogo from '../../assets/day/parallaxLeafsLeft.png';
-import parallaxCouch from '../../assets/day/parallaxCouchAndTable.png';
-import parallaxMe from '../../assets/day/parallaxMe.png';
-import parallaxFurniture from '../../assets/day/parallaxFurniture.png';
-import parallaxRoomBackground from '../../assets/day/parallaxRoom.png';
+import parallaxForeGroundLeafs from '../../assets/day/parallaxLeafsRight.webp';
+import parallaxForeGroundLeafsLogo from '../../assets/day/parallaxLeafsLeft.webp';
+import parallaxCouch from '../../assets/day/parallaxCouchAndTable.webp';
+import parallaxMe from '../../assets/day/parallaxMe.webp';
+import parallaxFurniture from '../../assets/day/parallaxFurniture.webp';
+import parallaxRoomBackground from '../../assets/day/parallaxRoom.webp';
 
 // ------------------ Dark Mode ------------------------
-import parallaxForeGroundLeafsDark from '../../assets/night/parallaxLeafsRight.png';
-import parallaxForeGroundLeafsLogoDark from '../../assets/night/parallaxLeafsLeft.png';
-import parallaxCouchDark from '../../assets/night/parallaxCouchandTable.png';
-import parallaxMeDark from '../../assets/night/parallaxMe.png';
-import parallaxFurnitureDark from '../../assets/night/parallaxFurnitare.png';
-import parallaxRoomBackgroundDark from '../../assets/night/parallaxRoomBehind.png';
-import parallaxTrash from '../../assets/night/parallaxTrash.png';
+import parallaxForeGroundLeafsDark from '../../assets/night/parallaxLeafsRight.webp';
+import parallaxForeGroundLeafsLogoDark from '../../assets/night/parallaxLeafsLeft.webp';
+import parallaxCouchDark from '../../assets/night/parallaxCouchandTable.webp';
+import parallaxMeDark from '../../assets/night/parallaxMe.webp';
+import parallaxFurnitureDark from '../../assets/night/parallaxFurnitare.webp';
+import parallaxRoomBackgroundDark from '../../assets/night/parallaxRoomBehind.webp';
+import parallaxTrash from '../../assets/night/parallaxTrash.webp';
 import { useThemeContext, setThemeLocalStorage } from '../../util/context';
 
 const Leaf = ({
