@@ -1,0 +1,60 @@
+div#skill-stack-section {
+  padding: 0;
+
+  .svg-wrapper {
+    .svg-section-transition {
+      width: 100%;
+      height: auto;
+      transform: translateY(2px);
+      path {
+        fill: var(--second-bg-color);
+      }
+    }
+  }
+  width: 100%;
+  .main-content-wrapper {
+    background-color: var(--second-bg-color);
+    padding-bottom: 3em;
+    .main-content {
+      flex-wrap: wrap;
+    }
+
+    .skill-stack-container {
+      display: flex;
+      column-gap: 10px;
+      row-gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .stack-carousel {
+      margin-top: 2em;
+
+      .embla {
+        overflow: hidden;
+      }
+      .embla__container {
+        display: flex;
+        justify-content: space-between;
+      }
+      .embla__slide {
+        flex: 0 0 15%;
+        min-width: 0;
+      }
+
+      .skill-icon {
+        display: flex;
+        justify-content: center;
+        padding: auto;
+        font-size: 55px;
+        opacity: 0.7;
+        transition: 0.3s ease-in opacity;
+      }
+      .skill-icon:hover {
+        //   font-size: 60px;
+        opacity: 1;
+        cursor: grab;
+      }
+    }
+  }
+}

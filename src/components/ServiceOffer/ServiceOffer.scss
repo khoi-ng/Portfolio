@@ -1,0 +1,50 @@
+section.services-Offer {
+  .services-Wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--first-bg-color);
+    .services-Header {
+      h2 {
+        padding-bottom: 0.5em;
+      }
+    }
+    .service-card {
+      h3 {
+        font-weight: 400;
+        font-size: 1.5em;
+        line-height: 1.2;
+        letter-spacing: 0;
+        // margin-bottom: 0.5em;
+        span {
+          // display: none;
+          opacity: 0.15;
+          font-size: 1.5em;
+          line-height: 1;
+        }
+      }
+      .service-number {
+        margin-bottom: 20px;
+        opacity: 0.15;
+        font-size: 2em;
+        line-height: 1;
+        display: none;
+      }
+      p {
+        // max-width: 17em;
+        font-size: 1.0626em;
+        line-height: 1.5;
+        letter-spacing: 0;
+      }
+    }
+
+    .services-Offerlist {
+      // display: flex;
+      // flex-direction: row;
+      display: grid;
+
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 1.15em;
+    }
+  }
+}

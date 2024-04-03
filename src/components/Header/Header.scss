@@ -1,0 +1,142 @@
+.header-section {
+  // background: rgb(24, 24, 26);
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0%;
+  // background-color: rgba(1, 43, 14, 0.815);
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(1, 43, 14, 0.815),
+  //   rgb(108, 192, 29)
+  // );
+
+  // background-color: #d4c1b1;
+
+  .svg-wrapper {
+    z-index: 22;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    .svg-section-transition {
+      width: 100%;
+      height: auto;
+      transform: translateY(2px);
+      path {
+        fill: var(--first-bg-color);
+      }
+    }
+  }
+
+  .leaf {
+    top: -50px;
+    position: absolute;
+    background-color: transparent;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+  }
+  .hero-container {
+    // --------------------------------------------------Hero Content---------------------------------------------------------------
+    .header-parallax {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      align-items: center;
+      background-color: transparent;
+      .img-div {
+        position: absolute;
+        pointer-events: none;
+        height: 100vh;
+        height: 100%;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .lamp-div {
+        position: relative;
+        pointer-events: auto;
+      }
+      .text-Header {
+        pointer-events: none;
+        // border: 1px red solid;
+        margin: auto 86% auto 14%;
+        // color: white;
+        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.692);
+        -webkit-text-fill-color: white;
+
+        width: 600px;
+        overflow-wrap: normal;
+
+        h2 {
+          font-size: 55px;
+        }
+      }
+
+      .lamp-btn-wrapper {
+        position: absolute;
+        // border: 1px solid red;
+        text-align: center !important;
+        .lamp-btn {
+          display: flex;
+          & > div {
+            margin: auto;
+            padding-bottom: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // border: 1px solid rgb(0, 17, 255);
+
+            .lightbulb,
+            .lightbulbOff {
+              // https://www.viget.com/articles/easy-textures-with-css-masks/
+              -webkit-mask-image: url('../../assets/texture/grit.png');
+              mask-image: url('../../assets/texture/grit.png');
+              stroke: rgb(172, 99, 50);
+              stroke-width: 1px;
+              fill: rgba(255, 166, 0, 0.596);
+              // animation: lightbulb 2s linear 6s infinite;
+            }
+            .lightbulbText {
+              -webkit-text-stroke: 0.5px black;
+              text-stroke: 0.5px black;
+              color: rgb(255, 166, 0);
+            }
+          }
+        }
+
+        /* Start https://www.cursors-4u.com */
+        *.lamp-btn:hover {
+          scale: 1.05;
+          transition: 0.1s ease-in;
+          cursor: url(https://cur.cursors-4u.net/user/use-1/use150.ani),
+            url(https://cur.cursors-4u.net/user/use-1/use150.png), auto !important;
+          .lightbulb,
+          .lightbulbOff {
+            stroke-width: 1px;
+            fill: rgba(233, 217, 79, 0.836);
+
+            // animation: lightbulb 2s linear 6s infinite;
+          }
+        } /* End https://www.cursors-4u.com */
+      }
+    }
+  }
+}
+
+// @keyframes lightbulb {
+//   0% {
+//     transform: rotate(5deg);
+//   }
+//   50% {
+//     transform: rotate(-5deg);
+//   }
+
+//   100% {
+//     transform: rotate(5deg);
+//   }
+// }

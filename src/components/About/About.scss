@@ -1,0 +1,146 @@
+.about-sections-wrapper {
+  position: relative;
+  // top: 0%;
+  // cursor: none;
+  // padding-top: 100px;
+  background-color: var(--first-bg-color);
+  .main-content {
+    align-items: start;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .description {
+    max-height: 100% !important;
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  .about-section-masked {
+    // background-color: white;
+    position: absolute;
+    z-index: 3;
+    color: red !important;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: rgb(66, 3, 3);
+    mask-image: url('../../assets/mouse-mask.svg');
+    mask-repeat: no-repeat;
+    mask-position: 50%;
+    mask-size: 250px;
+    h2,
+    p,
+    ul {
+      color: red !important;
+      user-select: none;
+    }
+    ul {
+      li {
+        text-decoration: wavy;
+        list-style: inside;
+      }
+      text-decoration: wavy;
+      list-style: inside;
+      margin-top: 16px;
+      opacity: 0.7;
+      line-height: 1.4em;
+    }
+    img {
+      // user-drag: none;
+      -webkit-user-drag: none;
+
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    .gray-img {
+      -webkit-user-drag: none;
+
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      position: absolute;
+      inset: 0;
+      background-image: url('../../assets/me_holding_Laptop_blackWhite.png');
+      background-size: cover;
+    }
+    .color-img {
+      -webkit-user-drag: none;
+
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      position: absolute;
+      inset: 0;
+      background-image: url('../../assets/me_holding_Laptop_blackWhite.png');
+      background-size: cover;
+    }
+  }
+
+  .about-section {
+    // padding-top: 50px;
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap-reverse;
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap-reverse;
+    }
+
+    // p {
+    //   font-weight: 600;
+    // }
+    .about-img-container {
+      margin: auto;
+      width: 400px;
+      height: 478px;
+      position: relative;
+
+      .gray-img {
+        position: absolute;
+        inset: 0;
+        background-image: url('../../assets/me_holding_Laptop_blackWhite.png');
+        background-size: cover;
+      }
+      .color-img {
+        position: absolute;
+        inset: 0;
+        background-image: url('../../assets/me_holding_Laptop.png');
+        background-size: cover;
+
+        -webkit-mask-image: url('../../assets/about-mask.png');
+        -webkit-mask-size: cover;
+        -webkit-mask-position: 0% 0%;
+
+        mask-image: url('../../assets/about-mask.png');
+        mask-size: cover;
+        mask-position: 0% 0%;
+
+        transition: mask-position;
+      }
+    }
+
+    .mask-animation {
+      animation: addColor 2s steps(22) forwards;
+    }
+
+    @keyframes addColor {
+      0% {
+        -webkit-mask-position: 0% 0%;
+        mask-position: 0% 0%;
+      }
+      100% {
+        -webkit-mask-position: 100% 0%;
+        mask-position: 100% 0%;
+      }
+    }
+  }
+}
