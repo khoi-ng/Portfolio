@@ -1,6 +1,19 @@
 section.demo-section {
   background-color: var(--second-bg-color);
-  padding-bottom: 70px;
+  padding-bottom: 10px;
+  z-index: 3;
+  .svg-wrapper {
+    background-color: var(--first-bg-color);
+    .svg-section-transition {
+      width: 100%;
+      height: auto;
+      transform: translateY(2px);
+      path {
+        fill: var(--second-bg-color);
+      }
+    }
+  }
+
   .viewToogle-wrapper {
     display: flex;
 
@@ -24,7 +37,7 @@ section.demo-section {
 .demos-container {
   position: relative;
   margin-top: 2em;
-
+  margin-bottom: 2em;
   a {
     text-decoration: none;
     border: 0;

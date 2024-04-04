@@ -84,11 +84,26 @@
     }
   }
 
+  .about-content-description-wrapper {
+    // width: 100vw;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+
+    // width: 800px;
+    margin: auto !important;
+  }
+
   .about-section {
     // padding-top: 50px;
     display: flex;
     // flex-direction: column;
     flex-wrap: wrap-reverse;
+
+    // .about-description {
+    //   margin: auto !important;
+    // }
 
     .main-content {
       display: flex;
@@ -100,6 +115,8 @@
     // }
     .about-img-container {
       margin: auto;
+      // width: 400px;
+      // height: 478px;
       width: 400px;
       height: 478px;
       position: relative;

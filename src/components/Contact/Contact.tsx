@@ -56,7 +56,7 @@ const Contact = () => {
         })
         .to([formWrapperRef.current, videoWrapperRef.current], {
           x: 200,
-          duration: 1.3,
+          duration: 1.1,
           delay: 4.8,
           // 3.3sec
         })
@@ -114,11 +114,20 @@ const Contact = () => {
               startDelay={0.2}
               key={isNight ? 'ContactStartH2Dark' : 'ContactStartH2Light'}
             >
-              <h2>Kontakt </h2>
+              <h2>
+                <span>Kontakt </span>
+              </h2>
             </TextLinesTranslateYtoVisibleDelay>
           </div>
+
           <div className='contact-container'>
             <div className='video-form-wrapper' ref={videoFormWrapperRef}>
+              <div className='px-5'>
+                <p className='contact-text p-0 m-0'>
+                  Schreib mir eine Nachricht oder kontaktiere mich
+                  KhoiNG123(at)t-online.de
+                </p>
+              </div>
               <div className='video-wrapper' ref={videoWrapperRef}>
                 <video ref={videoRef} muted>
                   {/* <source src="test02.mov" type='video/mp4; codecs="hvc1"'/> */}

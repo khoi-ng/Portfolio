@@ -1,16 +1,6 @@
 div#skill-stack-section {
   padding: 0;
 
-  .svg-wrapper {
-    .svg-section-transition {
-      width: 100%;
-      height: auto;
-      transform: translateY(2px);
-      path {
-        fill: var(--second-bg-color);
-      }
-    }
-  }
   width: 100%;
   .main-content-wrapper {
     background-color: var(--second-bg-color);

@@ -10,7 +10,7 @@ const DemoCard = ({ index, demo }: { index: number; demo: DemoData }) => {
   return (
     <div className='demo-card-wrapper' key={`demo-card-wrapper-${index}`}>
       {' '}
-      <a
+      <div
         className='demo-card'
         key={`demo-card-${index}`}
         onMouseEnter={() => setHoveredProject(true)}
@@ -30,7 +30,7 @@ const DemoCard = ({ index, demo }: { index: number; demo: DemoData }) => {
             </a>
           </div>
         </div>
-      </a>
+      </div>
       <div className='demo-card-data'>
         <span className='demo-card-description'>{demo.tech}</span>
 

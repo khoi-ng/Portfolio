@@ -36,11 +36,10 @@ function HomePage() {
         <Header />
         <About></About>
         <ServiceOffer></ServiceOffer>
-        <SkillStack></SkillStack>
-
         <ProjectViewContext.Provider value={[projectView, setProjectView]}>
           <DemosProjects></DemosProjects>
         </ProjectViewContext.Provider>
+        <SkillStack></SkillStack>
 
         <Contact></Contact>
         <Footer></Footer>

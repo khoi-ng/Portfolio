@@ -183,7 +183,7 @@ const HeaderParallax = () => {
         className='header-parallax inset-0 z-0 grid place-content-center pointer-events-none'
       >
         <div className='svg-wrapper'>
-          <svg
+          {/* <svg
             className='svg-section-transition'
             width='1440'
             height='292'
@@ -195,6 +195,22 @@ const HeaderParallax = () => {
               fillRule='evenodd'
               clipRule='evenodd'
               d='M0 195.5C71.5248 142.5 283.598 70.5 559.694 206.5C835.79 342.5 1261.6 125.5 1440 0V292H0V195.5Z'
+            />
+          </svg> */}
+
+          <svg
+            className='svg-section-transition'
+            width='1440'
+            height='146'
+            viewBox='0 0 1440 146'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              fillRule='evenodd'
+              clipRule='evenodd'
+              d='M0 142C42.5 69.0002 283.598 -63 559.694 73C835.79 209 1261.6 125.5 1440 0V145.5H0V142Z'
+              fill='#110F0F'
             />
           </svg>
         </div>
@@ -319,7 +335,7 @@ const HeaderParallax = () => {
         />
 
         <motion.div
-          className='img-div inset-0 z-19'
+          className='img-div inset-0 z-19 foreground-leafs-right'
           key={isNight ? parallaxForeGroundLeafsDark : parallaxForeGroundLeafs}
           initial={{
             translateX: 250,

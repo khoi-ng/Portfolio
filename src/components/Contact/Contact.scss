@@ -1,5 +1,10 @@
 .contact-section {
   padding-bottom: 0 !important;
+  .contact-text {
+    margin: 0 !important;
+    padding-top: 10px;
+  }
+
   .svg-wrapper {
     background-color: var(--second-bg-color);
     .svg-section-transition {
@@ -31,14 +36,23 @@
       }
     }
 
+    .form-wrapper-anim {
+      max-width: 70%;
+      margin-top: 70px;
+    }
+
+    div.form-wrapper {
+      margin-top: 20px;
+    }
+
     div.form-wrapper,
     .form-wrapper-anim {
       display: flex;
       flex-direction: column;
       // align-items: flex-start;
-      max-width: 600px;
+      //  max-width: 600px;
+      // max-width: 950px;
       width: 100%;
-      margin-top: 70px;
       margin-left: 10px;
 
       .contact-form {
@@ -176,6 +190,7 @@
     z-index: 10;
     top: 0px;
     left: 350px;
+    left: calc(70% - 250px);
     video {
       width: 350px;
     }
@@ -188,27 +203,38 @@
   }
 
   .form-wrapper-anim {
-    width: 600px;
+    // width: 600px;
     margin: 0;
     opacity: 1;
     top: -20px;
     left: -200px;
     position: absolute;
     z-index: 11;
-    background-color: #353535;
+    // background-color: #353535;
     padding: 20px;
-    border-radius: 20px;
+    padding-top: 10px;
+    // border-radius: 20px;
+    // transform: rotate(-1deg);
+
     label {
-      background-color: #353535 !important;
+      pointer-events: none;
+
       // background-color: blue;
     }
-
+    textarea {
+      background-color: var(--third-bg-color) !important;
+      & ~ label {
+        z-index: 2 !important;
+        background-color: var(--third-bg-color) !important;
+      }
+    }
     .input-wrapper {
       margin-bottom: 0 !important;
       margin-top: 1rem;
+
       input:-webkit-autofill,
       textarea:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0 50px #353535 inset !important; /* Change the color to your own background color */
+        -webkit-box-shadow: 0 0 0 50px var(--third-bg-color) inset !important; /* Change the color to your own background color */
         -webkit-text-fill-color: rgba(255, 255, 255, 0.4);
         transition: background-color 600000s 0s,
           var(--third-bg-color) 600000s 0s;

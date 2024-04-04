@@ -119,10 +119,18 @@ const AboutContent = ({
           startDelay={0.2}
           key={isNight ? 'AboutH2Dark' : 'AboutH2Light'}
         >
-          {isMasked ? <h2>Über Mich ! </h2> : <h2>Über Mich </h2>}
+          {isMasked ? (
+            <h2>
+              <span>Über Mich !</span>{' '}
+            </h2>
+          ) : (
+            <h2>
+              <span>Über Mich </span>
+            </h2>
+          )}
         </TextLinesTranslateYtoVisibleDelay>
 
-        <>
+        <div className='about-content-description-wrapper'>
           <TextLinesTranslateYtoVisibleDelay
             delayBetweenLines={0}
             startDelay={0.1}
@@ -161,7 +169,7 @@ const AboutContent = ({
               können.
             </p>
           </TextLinesTranslateYtoVisibleDelay>
-        </>
+        </div>
       </div>
 
       <div className='about-img-container about-vid about-gif'>

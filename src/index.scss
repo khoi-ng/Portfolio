@@ -78,16 +78,18 @@ footer {
   // flex-direction: row;
   // flex-wrap: wrap;
 
-  max-width: 1055px;
+  // max-width: 1055px;
+  max-width: 1362px;
   margin: auto;
   justify-content: space-between;
   // align-items: center;
   color: azure;
-  font-size: 18px;
+  // font-size: 18px;
+  font-size: 1.2rem;
   padding-left: 16px;
   padding-right: 16px;
   .description {
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
     // h2 { font-size: 52px; font-weight: bold; }
     // p { margin-top: 16px; opacity: 0.7; line-height: 1.4em; margin: 1em 0; }
@@ -100,15 +102,36 @@ footer {
     margin-top: 16px;
     opacity: 0.7;
     // line-height: 1.4em;
-    margin: 1em 0;
 
-    font-size: 1.06em;
+    margin: 1em 0;
+    // font-size: 24px;
+    // font-size: 1.06em;
     line-height: 1.5;
     letter-spacing: 0;
   }
+
+  .demo-title,
+  .title-description,
+  .demo-title,
+  .contact-title,
+  // .services-Header,
+  .about-description {
+    h2 {
+      padding: 1em 0;
+      padding-bottom: 0;
+      position: relative;
+      transform: rotate(2deg);
+      pointer-events: none;
+      span {
+        color: #1a1717;
+        background-color: #d9d9d9;
+        padding: 15px 10px;
+      }
+    }
+  }
 }
 
-@media only screen and (min-width: 1049px) {
+@media only screen and (min-width: 1249px) {
   .demos-container-gallery {
     .imgBox {
       // position: relative;
@@ -117,23 +140,34 @@ footer {
       // height: 241px !important;
 
       // width: 300px !important;
-      height: 201px !important;
+      height: 241px !important;
+      canvas {
+        aspect-ratio: 2/1;
+      }
     }
   }
 }
-@media only screen and (max-width: 1048px) {
+
+@media only screen and (max-width: 1353px) {
   .main-content {
-    max-width: 600px;
-    // text-align: left;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // // padding-left: 100px;
-    // // padding-right: 100px;
-    // &.services-Wrapper {
-    //   width: 600px !important;
-    // }
+    padding-left: 50px;
+    padding-right: 50px;
   }
+  .about-description {
+    max-width: 100% !important;
+  }
+  .services-Wrapper {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@media only screen and (max-width: 1248px) {
+  // .about-img-container {
+  //   margin: auto !important;
+  //   width: 400px !important;
+  //   height: 478px !important;
+  // }
 
   .form-wrapper {
     opacity: 1 !important;
@@ -156,24 +190,6 @@ footer {
       min-width: 0;
     }
   }
-  // .demos-container-gallery {
-  //   grid-template-columns: repeat(2, 40vw);
-  //   grid-auto-rows: auto;
-  //   .imgBox {
-  //     height: 22.5vw !important;
-  //   }
-  // }
-
-  .demos-container-gallery {
-    position: relative;
-
-    grid-template-columns: 100%;
-    grid-auto-rows: auto;
-    .imgBox {
-      height: 37.5vw !important;
-      // aspect-ratio: 1.7 / 1;
-    }
-  }
 
   .sidebar {
     display: block;
@@ -191,6 +207,9 @@ footer {
     width: 33px !important;
     height: 33px !important;
   }
+  .foreground-leafs-right {
+    right: -140px !important;
+  }
 
   .services-Offerlist {
     grid-template-columns: 1fr !important;
@@ -207,29 +226,17 @@ footer {
   }
 }
 
-@media only screen and (max-width: 830px) {
-  .text-Header {
-    h2 {
-      font-size: 2.5rem !important;
-    }
-    p {
-      font-size: 1.5rem;
-      line-height: 0.8rem;
-    }
-  }
-
+@media only screen and (max-width: 1030px) {
   .demos-container-gallery {
-    position: relative;
-
-    grid-template-columns: 100%;
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(2, 50%);
     .imgBox {
-      height: 49vw !important;
+      height: 240px !important;
+      canvas {
+        aspect-ratio: 2/1;
+      }
     }
   }
-}
 
-@media only screen and (max-width: 600px) {
   .demo-title,
   .title-description,
   .demo-title,
@@ -240,7 +247,19 @@ footer {
       font-size: 2rem !important;
     }
   }
+  .main-content {
+    p {
+      font-size: 1.05rem !important;
+    }
+  }
 
+  .about-img-container {
+    width: 300px !important;
+    height: 347px !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
   .text-Header {
     h2 {
       font-size: 2rem !important;
@@ -250,8 +269,13 @@ footer {
       line-height: 0.1rem;
     }
   }
-  .about-img-container {
-    width: 300px !important;
-    height: 347px !important;
+  .demos-container-gallery {
+    grid-template-columns: repeat(1, 100%);
+    .imgBox {
+      height: 320px !important;
+      canvas {
+        aspect-ratio: 2/1;
+      }
+    }
   }
 }

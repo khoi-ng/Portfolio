@@ -66,14 +66,18 @@
         // border: 1px red solid;
         margin: auto 86% auto 14%;
         // color: white;
-        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.692);
+        // -webkit-text-stroke: 1px rgba(0, 0, 0, 0.692);
         -webkit-text-fill-color: white;
 
-        width: 600px;
+        width: 800px;
         overflow-wrap: normal;
 
         h2 {
+          margin-bottom: 1px;
           font-size: 55px;
+        }
+        p {
+          margin-bottom: 2px;
         }
       }
 
