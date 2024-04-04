@@ -33,9 +33,9 @@ body {
     opacity: 10%;
     color: #aeae9d;
   }
-  &::before {
-    filter: url(#noiseFilter);
-  }
+  // &::before {
+  //   filter: url(#noiseFilter);
+  // }
 }
 html {
   scroll-behavior: smooth;
