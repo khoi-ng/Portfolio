@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import './Modal.scss';
 import { useEffect, useRef } from 'react';
+import { DemoData } from '../../../shared/demoData';
 
 const scaleAnimation = {
   initial: {
@@ -26,7 +27,18 @@ const scaleAnimation = {
   },
 };
 
-export default function Modal({ modal, demos, parentId }) {
+export default function Modal({
+  modal,
+  demos,
+  parentId,
+}: {
+  modal: {
+    active: boolean;
+    index: number;
+  };
+  demos: DemoData[];
+  parentId: string;
+}) {
   const { active, index } = modal;
   const modalContainer = useRef(null);
   const cursor = useRef(null);
@@ -69,27 +81,30 @@ export default function Modal({ modal, demos, parentId }) {
     // const cursorWidthCenter = cursor.current.clientWidth / 2;
     // const cursorHeightCenter = cursor.current.clientHeight / 2;
 
-    const handlemousemove = (e) => {
-      const parentRect = parentContainer.getBoundingClientRect();
-      const rect = e.target.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - parentRect.y;
+    const handlemousemove = (e: MouseEvent) => {
+      const parentRect = parentContainer?.getBoundingClientRect();
+      if (parentRect) {
+        const node = e.target as HTMLElement;
+        const rect = node?.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - parentRect.y;
 
-      xMoveContainer(x);
+        xMoveContainer(x);
 
-      yMoveContainer(y);
+        yMoveContainer(y);
 
-      xMoveCursor(x);
+        xMoveCursor(x);
 
-      yMoveCursor(y);
+        yMoveCursor(y);
+      }
     };
 
-    parentContainer.addEventListener('mousemove', (e) => {
+    parentContainer?.addEventListener('mousemove', (e) => {
       handlemousemove(e);
     });
 
     return () => {
-      parentContainer.removeEventListener('mousemove', handlemousemove);
+      parentContainer?.removeEventListener('mousemove', handlemousemove);
     };
   }, [parentId, index]);
   return (

@@ -11,9 +11,9 @@ import { IoLogoJavascript } from 'react-icons/io5';
 // import { TbBrandNextjs } from 'react-icons/tb';
 import { TbFileTypeXml } from 'react-icons/tb';
 
-import { EmblaOptionsType } from 'embla-carousel';
-import AutoScroll from 'embla-carousel-auto-scroll';
-import useEmblaCarousel from 'embla-carousel-react';
+// import { EmblaOptionsType } from 'embla-carousel';
+// import AutoScroll from 'embla-carousel-auto-scroll';
+// import useEmblaCarousel from 'embla-carousel-react';
 import { TextLinesTranslateYtoVisibleDelay } from '../FramerAnimation/TextAnimations';
 import { useThemeContext } from '../../util/context';
 
