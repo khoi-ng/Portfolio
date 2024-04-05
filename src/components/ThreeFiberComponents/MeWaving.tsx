@@ -10,7 +10,7 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 // @ts-ignore
 const Me3DWaving = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF(
+  const { nodes, materials, animations }: any = useGLTF(
     '3D/meWaving-transformed.glb'
   );
   const { actions, names } = useAnimations(animations, group);
@@ -29,32 +29,27 @@ const Me3DWaving = (props) => {
         <group name='Armature' rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <primitive object={nodes.mixamorigHips} />
         </group>
+
         <skinnedMesh
           name='avaturn_body'
-          // @ts-ignore
           geometry={nodes.avaturn_body.geometry}
           material={materials.avaturn_body_material}
-          // @ts-ignore
           skeleton={nodes.avaturn_body.skeleton}
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />
         <skinnedMesh
           name='avaturn_hair_0'
-          // @ts-ignore
           geometry={nodes.avaturn_hair_0.geometry}
           material={materials.avaturn_hair_0_material}
-          // @ts-ignore
           skeleton={nodes.avaturn_hair_0.skeleton}
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}
         />
         <skinnedMesh
           name='avaturn_look_0'
-          // @ts-ignore
           geometry={nodes.avaturn_look_0.geometry}
           material={materials.avaturn_look_0_material}
-          // @ts-ignore
           skeleton={nodes.avaturn_look_0.skeleton}
           rotation={[Math.PI / 2, 0, 0]}
           scale={0.01}

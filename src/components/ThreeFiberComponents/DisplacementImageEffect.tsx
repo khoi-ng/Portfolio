@@ -56,7 +56,7 @@ function ImageWithEffect({
   aspectRatio: number[];
   isHovered?: boolean | null;
 }) {
-  const ref = useRef<unknown>();
+  const ref = useRef<any>();
 
   const [widthRatio, heightRatio] = aspectRatio;
   const [texture1, texture2, dispTexture] = useTexture([
