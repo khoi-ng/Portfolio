@@ -9,9 +9,9 @@ const ImageFadeMaterial = shaderMaterial(
   {
     effectFactor: 1.2,
     dispFactor: 0,
-    tex: undefined,
-    tex2: undefined,
-    disp: undefined,
+    tex: null,
+    tex2: null,
+    disp: null,
   },
   /*glsl*/ ` varying vec2 vUv;
       void main() {

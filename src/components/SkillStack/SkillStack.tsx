@@ -30,19 +30,19 @@ const SkillStack = () => {
     <TbFileTypeXml color='#DAA241' />,
   ];
 
-  const options: EmblaOptionsType = { loop: true };
+  // const options: EmblaOptionsType = { loop: true };
   const [isNight] = useThemeContext();
 
-  const [emblaRef] = useEmblaCarousel(options, [
-    AutoScroll({
-      playOnInit: true,
-      isPlaying: true,
-      stopOnInteraction: false,
-      stopOnMouseEnter: true,
-      speed: 0.65,
-      // stopOnFocusIn: true,
-    }),
-  ]);
+  // const [emblaRef] = useEmblaCarousel(options, [
+  //   AutoScroll({
+  //     playOnInit: true,
+  //     isPlaying: true,
+  //     stopOnInteraction: false,
+  //     stopOnMouseEnter: true,
+  //     speed: 0.65,
+  //     // stopOnFocusIn: true,
+  //   }),
+  // ]);
 
   return (
     <div id='skill-stack-section' className='content-section'>

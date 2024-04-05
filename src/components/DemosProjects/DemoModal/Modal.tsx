@@ -34,23 +34,31 @@ export default function Modal({ modal, demos, parentId }) {
 
   useEffect(() => {
     //Move Container
-    let xMoveContainer = gsap.quickTo(modalContainer.current, 'left', {
-      duration: 0.8,
-      ease: 'power3',
-    });
+    let xMoveContainer: gsap.QuickToFunc = gsap.quickTo(
+      modalContainer.current,
+      'left',
+      {
+        duration: 0.8,
+        ease: 'power3',
+      }
+    );
 
-    let yMoveContainer = gsap.quickTo(modalContainer.current, 'top', {
-      duration: 0.8,
-      ease: 'power3',
-    });
+    let yMoveContainer: gsap.QuickToFunc = gsap.quickTo(
+      modalContainer.current,
+      'top',
+      {
+        duration: 0.8,
+        ease: 'power3',
+      }
+    );
 
     //Move cursor
-    let xMoveCursor = gsap.quickTo(cursor.current, 'left', {
+    let xMoveCursor: gsap.QuickToFunc = gsap.quickTo(cursor.current, 'left', {
       duration: 0.5,
       ease: 'power3',
     });
 
-    let yMoveCursor = gsap.quickTo(cursor.current, 'top', {
+    let yMoveCursor: gsap.QuickToFunc = gsap.quickTo(cursor.current, 'top', {
       duration: 0.5,
       ease: 'power3',
     });

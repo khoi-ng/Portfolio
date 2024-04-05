@@ -1,8 +1,22 @@
 import React from 'react';
 
 import './Demo.scss';
+import { DemoData } from '../../../shared/demoData';
 
-export default function Demo({ index, demo, setModal }) {
+export default function Demo({
+  index,
+  demo,
+  setModal,
+}: {
+  index: number;
+  demo: DemoData;
+  setModal: React.Dispatch<
+    React.SetStateAction<{
+      active: boolean;
+      index: number;
+    }>
+  >;
+}) {
   return (
     <div
       onMouseEnter={() => {
