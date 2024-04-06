@@ -18,32 +18,46 @@ import {
   getProjectViewLocalStorage,
   ProjectViewModes,
 } from '../util/context';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useScrollToAnchor } from '../util/scrollToPageSection';
+import LoadingScreen from '../components/LoadingScreen/LoadingScreen';
 
 function HomePage() {
   const [theme, setTheme] = useState<boolean>(getThemeLocalStorage);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [projectView, setProjectView] = useState<ProjectViewModes>(
     getProjectViewLocalStorage
   );
   useScrollToAnchor();
 
+  useEffect(() => {
+    setIsLoading(true);
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
-      <ThemeContext.Provider value={[theme, setTheme]}>
-        <Navbar></Navbar>
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
+        <ThemeContext.Provider value={[theme, setTheme]}>
+          <Navbar></Navbar>
 
-        <Header />
-        <About></About>
-        <ServiceOffer></ServiceOffer>
-        <ProjectViewContext.Provider value={[projectView, setProjectView]}>
-          <DemosProjects></DemosProjects>
-        </ProjectViewContext.Provider>
-        <SkillStack></SkillStack>
+          <Header />
+          <About></About>
+          <ServiceOffer></ServiceOffer>
+          <ProjectViewContext.Provider value={[projectView, setProjectView]}>
+            <DemosProjects></DemosProjects>
+          </ProjectViewContext.Provider>
+          <SkillStack></SkillStack>
 
-        <Contact></Contact>
-        <Footer></Footer>
-      </ThemeContext.Provider>
+          <Contact></Contact>
+          <Footer></Footer>
+        </ThemeContext.Provider>
+      )}
     </>
   );
 }
