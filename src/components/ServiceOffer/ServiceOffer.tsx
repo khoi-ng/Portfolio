@@ -1,7 +1,4 @@
-import {
-  ElementsTranslateYtoVisibleStaggered,
-  TranslateYtoVisible,
-} from '../FramerAnimation/InvisToVisAnimations';
+import { ElementsTranslateYtoVisibleStaggered } from '../FramerAnimation/InvisToVisAnimations';
 import './ServiceOffer.scss';
 
 // import testImg from '../../assets/test.png';
