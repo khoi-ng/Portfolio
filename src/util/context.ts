@@ -11,13 +11,13 @@ export function getThemeLocalStorage(): boolean {
   const localStorageKey = import.meta.env.VITE_MODE;
   if (localStorageKey !== undefined) {
     const keyValue: string | null = localStorage.getItem(localStorageKey);
-    if (keyValue !== null && keyValue?.trim() === 'false') {
+    if (keyValue !== null && keyValue?.trim() === 'true') {
       // if this doesnt work it will always return false
-      return false;
+      return true;
     }
   }
-  setThemeLocalStorage(true);
-  return true;
+  setThemeLocalStorage(false);
+  return false;
 }
 
 export function setThemeLocalStorage(newMode: boolean) {
