@@ -52,13 +52,13 @@ export function getProjectViewLocalStorage(): ProjectViewModes {
   const localStorageKey = import.meta.env.VITE_PROJECT_VIEW;
   if (localStorageKey !== undefined) {
     const keyValue: string | null = localStorage.getItem(localStorageKey);
-    if (keyValue !== null && keyValue?.trim() === '"GalleryView"') {
+    if (keyValue !== null && keyValue?.trim() === '"ListView"') {
       // console.log(keyValue?.trim());
-      return 'GalleryView';
+      return 'ListView';
     }
   }
-  setProjectViewStorage('ListView');
-  return 'ListView';
+  setProjectViewStorage('GalleryView');
+  return 'GalleryView';
 }
 
 export function setProjectViewStorage(
