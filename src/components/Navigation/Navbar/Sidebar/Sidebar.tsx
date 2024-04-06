@@ -13,6 +13,7 @@ const SidebarButton: React.FC<SideBarProps> = ({ open, setOpenSidebar }) => {
       onClick={() => setOpenSidebar((prev: boolean) => !prev)}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
+      initial={'closed'}
       animate={open ? 'open' : 'closed'}
       style={open ? { backgroundColor: 'transparent' } : {}}
     >
@@ -26,9 +27,7 @@ const SidebarButton: React.FC<SideBarProps> = ({ open, setOpenSidebar }) => {
             open: { d: 'M 3 16.5 L 17 2.5' },
           }}
         />
-        {open ? (
-          <></>
-        ) : (
+        {!open && (
           <motion.path
             strokeWidth='3'
             stroke='black'

@@ -34,7 +34,7 @@ function HomePage() {
     setIsLoading(true);
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 500);
+    }, 1000);
     return () => clearTimeout(timeout);
   }, []);
 

@@ -6,7 +6,7 @@ import leaf1 from '../../assets/leafs/leaf.webp';
 import { TbBulbOff, TbBulb } from 'react-icons/tb';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { TextLinesTranslateYtoVisibleDelay } from '../FramerAnimation/TextAnimations';
+import { ElementsTranslateYtoVisibleStaggered } from '../FramerAnimation/InvisToVisAnimations';
 
 // ------------------ Light Mode ------------------------
 
@@ -387,7 +387,7 @@ const HeaderParallax = () => {
             opacity: opacityTextY,
           }}
         >
-          <TextLinesTranslateYtoVisibleDelay
+          <ElementsTranslateYtoVisibleStaggered
             key={isNight ? 'HeaderTitleDark' : 'HeaderTitleLight'}
             delayBetweenLines={0.1}
             startDelay={0.5}
@@ -395,7 +395,7 @@ const HeaderParallax = () => {
             <p>Hey, ich heiße</p>
             <h2>DUY KHOI NGUYEN</h2>
             <p>Developer, Web Enthusiast</p>
-          </TextLinesTranslateYtoVisibleDelay>
+          </ElementsTranslateYtoVisibleStaggered>
         </motion.div>
       </div>
     </div>

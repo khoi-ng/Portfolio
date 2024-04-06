@@ -1,6 +1,6 @@
 // import { motion } from 'framer-motion';
 import './DemosProjects.scss';
-import { TextLinesTranslateYtoVisibleDelay } from '../FramerAnimation/TextAnimations';
+import { ElementsTranslateYtoVisibleStaggered } from '../FramerAnimation/InvisToVisAnimations';
 import { useProjectContext, useThemeContext } from '../../util/context';
 import { useState } from 'react';
 import Demo from './DemoComp/Demo';
@@ -55,16 +55,15 @@ const DemosProjects = () => {
         </div>
         <div className='main-content demo-content-wrapper'>
           <div className='demo-title'>
-            <TextLinesTranslateYtoVisibleDelay
+            <ElementsTranslateYtoVisibleStaggered
               delayBetweenLines={0}
-              startDelay={0.2}
               key={isNight ? 'DemosPrH2Dark' : 'DemosPrH2Light'}
             >
               <h2>
                 <span>Demos/Projekte </span>
               </h2>
               {/* <span>Hier findest du einige Demos</span> */}
-            </TextLinesTranslateYtoVisibleDelay>
+            </ElementsTranslateYtoVisibleStaggered>
             <div className='viewToogle-wrapper'>
               <ViewModeToggleBtn />
             </div>
@@ -77,11 +76,13 @@ const DemosProjects = () => {
             >
               {demos.map((demo, index) => {
                 return (
-                  <DemoCard
-                    demo={demo}
-                    index={index}
-                    key={`demo-card-key-${index}`}
-                  />
+                  <ElementsTranslateYtoVisibleStaggered delayBetweenLines={0}>
+                    <DemoCard
+                      demo={demo}
+                      index={index}
+                      key={`demo-card-key-${index}`}
+                    />
+                  </ElementsTranslateYtoVisibleStaggered>
                 );
               })}
             </div>

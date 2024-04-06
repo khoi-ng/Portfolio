@@ -146,6 +146,9 @@ footer {
       }
     }
   }
+  .video-form-wrapper {
+    height: 550px;
+  }
 }
 
 @media only screen and (max-width: 1353px) {
@@ -272,7 +275,8 @@ footer {
   .demos-container-gallery {
     grid-template-columns: repeat(1, 100%);
     .imgBox {
-      height: 320px !important;
+      max-height: 320px !important;
+      height: 46vw !important;
       canvas {
         aspect-ratio: 2/1;
       }

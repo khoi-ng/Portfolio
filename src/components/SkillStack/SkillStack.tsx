@@ -14,7 +14,7 @@ import { TbFileTypeXml } from 'react-icons/tb';
 // import { EmblaOptionsType } from 'embla-carousel';
 // import AutoScroll from 'embla-carousel-auto-scroll';
 // import useEmblaCarousel from 'embla-carousel-react';
-import { TextLinesTranslateYtoVisibleDelay } from '../FramerAnimation/TextAnimations';
+import { ElementsTranslateYtoVisibleStaggered } from '../FramerAnimation/InvisToVisAnimations';
 import { useThemeContext } from '../../util/context';
 
 const SkillStack = () => {
@@ -50,18 +50,22 @@ const SkillStack = () => {
       <div className='main-content-wrapper'>
         <div className='main-content about-content-wrapper'>
           <div className='stack-description title-description'>
-            <TextLinesTranslateYtoVisibleDelay
+            <ElementsTranslateYtoVisibleStaggered
               delayBetweenLines={0}
-              startDelay={0.2}
               key={isNight ? 'SkillStackH2Dark' : 'SkillStackH2Light'}
             >
               <h2>
                 <span>Skill Stack</span>
               </h2>
-            </TextLinesTranslateYtoVisibleDelay>
+            </ElementsTranslateYtoVisibleStaggered>
           </div>
           <div className='px-5'>
-            <p>Technologien, die ich verwende um Webseiten zu erstellen.</p>
+            <ElementsTranslateYtoVisibleStaggered
+              delayBetweenLines={0}
+              key={isNight ? 'SkillStackPDark' : 'SkillStackPLight'}
+            >
+              <p>Technologien, die ich verwende um Webseiten zu erstellen.</p>
+            </ElementsTranslateYtoVisibleStaggered>
           </div>
           <div className='stack-carousel'>
             {/* <div className='embla' ref={emblaRef}> */}
@@ -70,12 +74,22 @@ const SkillStack = () => {
               className='skill-stack-container'
             >
               {icons.map((icon, index) => (
-                <div
+                // <div
+                //   className='embla__slide skill-icon'
+                //   key={`stackitem-${index}`}
+                // >
+                <ElementsTranslateYtoVisibleStaggered
+                  delayBetweenLines={0}
                   className='embla__slide skill-icon'
-                  key={`stackitem-${index}`}
+                  key={
+                    isNight
+                      ? `SkillStackIcon-${index}Dark`
+                      : `SkillStackIcon-${index}Light`
+                  }
                 >
                   {icon}
-                </div>
+                </ElementsTranslateYtoVisibleStaggered>
+                // </div>
               ))}
             </div>
             {/* </div> */}

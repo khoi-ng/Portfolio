@@ -1,5 +1,5 @@
 import './About.scss';
-import { TextLinesTranslateYtoVisibleDelay } from '../FramerAnimation/TextAnimations';
+import { ElementsTranslateYtoVisibleStaggered } from '../FramerAnimation/InvisToVisAnimations';
 import { useThemeContext } from '../../util/context';
 import { motion, useInView } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -114,9 +114,8 @@ const AboutContent = ({
   return (
     <motion.div className={`main-content about-content-wrapper `}>
       <div className='about-description description'>
-        <TextLinesTranslateYtoVisibleDelay
+        <ElementsTranslateYtoVisibleStaggered
           delayBetweenLines={0}
-          startDelay={0.2}
           key={isNight ? 'AboutH2Dark' : 'AboutH2Light'}
         >
           {isMasked ? (
@@ -128,10 +127,10 @@ const AboutContent = ({
               <span>Über Mich </span>
             </h2>
           )}
-        </TextLinesTranslateYtoVisibleDelay>
+        </ElementsTranslateYtoVisibleStaggered>
 
         <div className='about-content-description-wrapper'>
-          <TextLinesTranslateYtoVisibleDelay
+          <ElementsTranslateYtoVisibleStaggered
             delayBetweenLines={0}
             startDelay={0.1}
             key={isNight ? 'AboutPara1Dark' : 'AboutPara1Light'}
@@ -143,8 +142,8 @@ const AboutContent = ({
               Zeit meinen beruflichen Weg als Webentwickler (Fullstack, Frontend
               oder Backend) fortzufahren.
             </p>
-          </TextLinesTranslateYtoVisibleDelay>
-          <TextLinesTranslateYtoVisibleDelay
+          </ElementsTranslateYtoVisibleStaggered>
+          <ElementsTranslateYtoVisibleStaggered
             delayBetweenLines={0}
             startDelay={0.1}
             amount={0.1}
@@ -156,8 +155,8 @@ const AboutContent = ({
               oder kreativen Webseiten erstellen & auch die Nutzer-Erfahrung im
               Web verbessern.
             </p>
-          </TextLinesTranslateYtoVisibleDelay>
-          <TextLinesTranslateYtoVisibleDelay
+          </ElementsTranslateYtoVisibleStaggered>
+          <ElementsTranslateYtoVisibleStaggered
             delayBetweenLines={0}
             startDelay={0.1}
             amount={0.1}
@@ -168,7 +167,7 @@ const AboutContent = ({
               mit Programmer Skills den Prozess um ein vielfaches vereinfachen
               können.
             </p>
-          </TextLinesTranslateYtoVisibleDelay>
+          </ElementsTranslateYtoVisibleStaggered>
         </div>
       </div>
 

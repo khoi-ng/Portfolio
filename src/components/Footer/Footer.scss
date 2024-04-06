@@ -1,24 +1,37 @@
 footer {
   // padding-top: 80px;
+
   .footer-content-wrapper {
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: 2;
+    // z-index: 1;
     background-color: #086453;
     gap: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
     color: azure;
-    div {
-      margin-top: 6px;
-    }
+
     .row-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      //   margin: 0 auto;
+      flex-direction: row;
+      max-width: 1300px;
+      width: 68vw;
+      margin: auto;
+      // flex-wrap: wrap;
+      // justify-content: center;
+      align-content: center;
+      justify-content: space-between;
+      .copyright {
+        // text-align: center;
+        font-size: 13px;
+        padding-bottom: 2px;
+        justify-self: end;
+      }
+      .link-icons {
+        display: flex;
+        flex-direction: row;
+      }
     }
 
     a:hover {
@@ -30,10 +43,5 @@ footer {
       // color: rgb(27, 27, 36);
       margin-left: 12px;
     }
-  }
-  .copyright {
-    text-align: center;
-    font-size: 13px;
-    padding-bottom: 2px;
   }
 }

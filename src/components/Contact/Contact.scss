@@ -183,7 +183,6 @@
 .video-form-wrapper {
   width: 100%;
   position: relative;
-  // height: 600px;
   .video-wrapper {
     position: absolute;
     // border: red solid 1px;
@@ -222,6 +221,7 @@
       // background-color: blue;
     }
     textarea {
+      resize: none;
       background-color: var(--third-bg-color) !important;
       & ~ label {
         z-index: 2 !important;
@@ -241,13 +241,25 @@
       }
     }
   }
+}
+.canvas-Wrapper {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  z-index: 11;
+  right: 0;
+  top: 0;
+}
 
-  .canvas-Wrapper {
-    display: none;
-    opacity: 0;
-    position: absolute;
-    z-index: 11;
-    right: 0;
-    top: 0;
+.svg-wrapper-bottom {
+  background-color: var(--third-bg-color);
+
+  .svg-section-transition-bottom {
+    width: 100%;
+    height: auto;
+    transform: translateY(3px);
+    path {
+      fill: #086453;
+    }
   }
 }

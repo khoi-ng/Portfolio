@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import MeWaving from '../ThreeFiberComponents/MeWaving';
 import MeshPortalCard from '../ThreeFiberComponents/MeshPortalCard';
-import { TextLinesTranslateYtoVisibleDelay } from '../FramerAnimation/TextAnimations';
+import { ElementsTranslateYtoVisibleStaggered } from '../FramerAnimation/InvisToVisAnimations';
 import { useThemeContext } from '../../util/context';
 import meVidDrag from '../../assets/video/me_transparent_320x569.webm';
 import skybox from '../../assets/Skybox/anime_colorful_fantasy_ghibli.webp';
@@ -109,15 +109,14 @@ const Contact = () => {
       <div className='contact-content-wrapper'>
         <div className='main-content contact-content'>
           <div className='demo-title'>
-            <TextLinesTranslateYtoVisibleDelay
+            <ElementsTranslateYtoVisibleStaggered
               delayBetweenLines={0}
-              startDelay={0.2}
               key={isNight ? 'ContactStartH2Dark' : 'ContactStartH2Light'}
             >
               <h2>
                 <span>Kontakt </span>
               </h2>
-            </TextLinesTranslateYtoVisibleDelay>
+            </ElementsTranslateYtoVisibleStaggered>
           </div>
 
           <div className='contact-container'>
@@ -241,6 +240,19 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className='svg-wrapper-bottom'>
+        <svg
+          className='svg-section-transition-bottom'
+          width='1460'
+          height='61'
+          viewBox='0 0 1460 61'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path d='M1460 60H0.5V2C73 81.5 1460 49.5 1468 2V60Z' />
+        </svg>
       </div>
     </section>
   );

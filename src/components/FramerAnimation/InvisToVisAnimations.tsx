@@ -83,15 +83,15 @@ export const StaggeredTextAnimation = ({
   );
 };
 
-export const TextLinesTranslateYtoVisibleDelay = ({
+export const ElementsTranslateYtoVisibleStaggered = ({
   children,
   once = true,
   className,
   repeatDelay,
   delayBetweenLines = 0.1,
-  startDelay = 0.5,
+  startDelay = 0.2,
   identifier,
-  amount = 0.6,
+  amount = 0.3,
 }: {
   children: JSX.Element | JSX.Element[];
   once?: boolean;
@@ -141,37 +141,38 @@ export const TextLinesTranslateYtoVisibleDelay = ({
   }, [isInView, controls, repeatDelay]);
 
   return (
-    <span className={`${className} overflow-hidden relative`}>
-      <motion.span
-        ref={ref}
-        key={identifier}
-        initial='hidden'
-        animate={controls}
-      >
-        {React.Children.toArray(children).map((child, i) => (
-          <motion.div
-            key={`${identifier}-Div-${i}`}
-            variants={animation}
-            transition={{
-              duration: 0.3,
-              delay: startDelay + delayBetweenLines * i,
-            }}
-          >
-            {child}
-          </motion.div>
-        ))}
-      </motion.span>
-    </span>
+    <motion.span
+      ref={ref}
+      key={identifier}
+      initial='hidden'
+      animate={controls}
+      className={`${className} overflow-hidden relative`}
+    >
+      {React.Children.toArray(children).map((child, i) => (
+        <motion.div
+          key={`${identifier}-Div-${i}`}
+          variants={animation}
+          transition={{
+            duration: 0.3,
+            delay: startDelay + delayBetweenLines * i,
+          }}
+        >
+          {child}
+        </motion.div>
+      ))}
+    </motion.span>
   );
 };
 
-export const TextLineTranslateYtoVisible = ({
-  text,
+export const TranslateYtoVisible = ({
+  children,
+  yTranslate = 40,
   once = true,
   className,
   repeatDelay,
 }: {
-  text: string;
+  children: JSX.Element | JSX.Element[];
+  yTranslate?: number;
   once?: boolean;
   className?: string;
   repeatDelay?: number;
@@ -181,7 +182,7 @@ export const TextLineTranslateYtoVisible = ({
   const animation = {
     hidden: {
       opacity: 0,
-      y: 75,
+      y: yTranslate,
     },
     visible: {
       opacity: 1,
@@ -226,7 +227,7 @@ export const TextLineTranslateYtoVisible = ({
           variants={animation}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          {text}
+          {children}
         </motion.span>
       </motion.div>
     </div>
