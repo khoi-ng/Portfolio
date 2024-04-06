@@ -1,10 +1,10 @@
 import { shaderMaterial, useTexture } from '@react-three/drei';
 import { Canvas, extend, Object3DNode, useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { MutableRefObject, useRef, useState } from 'react';
 import displacementImage from '../../assets/displacement/11.jpg';
 import * as easing from 'maath/easing';
 import { DemoData } from '../../shared/demoData';
-import { ShaderMaterial } from 'three';
+import { ShaderMaterial, Texture } from 'three';
 
 const ImageFadeMaterial: typeof ShaderMaterial & {
   key: string;
@@ -50,7 +50,16 @@ extend({ ImageFadeMaterial });
 
 declare module '@react-three/fiber' {
   interface ThreeElements {
-    imageFadeMaterial: Object3DNode<ShaderMaterial, typeof ImageFadeMaterial>;
+    imageFadeMaterial: Object3DNode<
+      ShaderMaterial & {
+        ref: MutableRefObject<any>;
+        tex: Texture;
+        tex2: Texture;
+        disp: Texture;
+        toneMapped: false;
+      },
+      typeof ImageFadeMaterial
+    >;
   }
 }
 
