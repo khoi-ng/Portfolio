@@ -9,6 +9,7 @@ const Footer = () => {
           <div className='copyright'>
             <p>Duy Khoi Nguyen © 2024</p>
             <p>Designed & Programmed with ❤️</p>
+            <p>Tools Used: PhotoShop, Figma, Krita, React, SASS, TS </p>
           </div>
           <div className='link-icons'>
             <a href='https://github.com/khoi-ng'>

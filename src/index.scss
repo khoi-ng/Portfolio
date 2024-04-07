@@ -255,14 +255,33 @@ footer {
       font-size: 1.05rem !important;
     }
   }
+  .about-section {
+    .main-content {
+      .about-img-container {
+        width: 300px !important;
+        height: 347px !important;
+      }
+    }
+  }
+}
 
-  .about-img-container {
-    width: 300px !important;
-    height: 347px !important;
+@media only screen and (max-width: 850px) {
+  .about-section {
+    .main-content {
+      display: flex;
+      flex-wrap: wrap-reverse;
+    }
   }
 }
 
 @media only screen and (max-width: 700px) {
+  .about-section {
+    .main-content {
+      display: flex;
+      flex-wrap: wrap-reverse;
+    }
+  }
+
   .text-Header {
     h2 {
       font-size: 2rem !important;

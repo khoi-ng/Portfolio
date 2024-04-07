@@ -16,6 +16,7 @@ import { TbFileTypeXml } from 'react-icons/tb';
 // import useEmblaCarousel from 'embla-carousel-react';
 import { ElementsTranslateYtoVisibleStaggered } from '../FramerAnimation/InvisToVisAnimations';
 import { useThemeContext } from '../../util/context';
+import LeafAnimationTitle from '../FramerAnimation/LeafAnimationTitle';
 
 const SkillStack = () => {
   const icons = [
@@ -54,9 +55,12 @@ const SkillStack = () => {
               delayBetweenLines={0}
               key={isNight ? 'SkillStackH2Dark' : 'SkillStackH2Light'}
             >
-              <h2>
-                <span>Skill Stack</span>
-              </h2>
+              <LeafAnimationTitle
+                amount={1}
+                title='Skill Stack'
+                leafId='SkillLeaf'
+                leafPathId='SkillLeafPath'
+              />
             </ElementsTranslateYtoVisibleStaggered>
           </div>
           <div className='px-5'>

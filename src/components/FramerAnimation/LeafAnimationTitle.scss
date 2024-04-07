@@ -1,0 +1,50 @@
+h2 {
+  span {
+    position: relative;
+    .svg-wrapper-leaf {
+      z-index: 0;
+      background-color: transparent;
+      width: calc(100% + 440px);
+      position: absolute;
+      bottom: 44%;
+      left: -400px;
+      svg {
+        width: 100%;
+      }
+    }
+  }
+}
+
+section.demo-section {
+}
+
+section.about-section {
+  h2 {
+    span {
+      .svg-wrapper-leaf {
+        width: calc(100% + 440px);
+        position: absolute;
+        bottom: 47%;
+        left: -382px;
+        svg {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  .svg-wrapper-leaf {
+    display: none;
+    z-index: 0;
+    background-color: transparent;
+    width: calc(100% + 440px);
+    position: absolute;
+    bottom: 44%;
+    left: -400px;
+    svg {
+      width: 100%;
+    }
+  }
+}

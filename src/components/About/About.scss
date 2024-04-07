@@ -99,7 +99,7 @@
     // padding-top: 50px;
     display: flex;
     // flex-direction: column;
-    flex-wrap: wrap-reverse;
+    // flex-wrap: wrap-reverse;
 
     // .about-description {
     //   margin: auto !important;
@@ -107,7 +107,7 @@
 
     .main-content {
       display: flex;
-      flex-wrap: wrap-reverse;
+      // flex-wrap: wrap-reverse;
     }
 
     // p {
@@ -115,10 +115,11 @@
     // }
     .about-img-container {
       margin: auto;
-      // width: 400px;
+      width: 400px;
       // height: 478px;
       width: 400px;
       height: 478px;
+      aspect-ratio: 1/1;
       position: relative;
 
       .gray-img {

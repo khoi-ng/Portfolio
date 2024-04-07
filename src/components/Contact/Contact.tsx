@@ -12,6 +12,7 @@ import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LeafAnimationTitle from '../FramerAnimation/LeafAnimationTitle';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -113,9 +114,12 @@ const Contact = () => {
               delayBetweenLines={0}
               key={isNight ? 'ContactStartH2Dark' : 'ContactStartH2Light'}
             >
-              <h2>
-                <span>Kontakt </span>
-              </h2>
+              <LeafAnimationTitle
+                amount={1}
+                title='Kontakt'
+                leafId='KontaktLeaf'
+                leafPathId='KontaktLeafPath'
+              />
             </ElementsTranslateYtoVisibleStaggered>
           </div>
 

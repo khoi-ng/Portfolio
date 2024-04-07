@@ -11,9 +11,12 @@ import DemoModal from './DemoModal/Modal';
 import ViewModeToggleBtn from './ViewModeToggleBtn/ViewModeToggleBtn';
 // import displacementImg from '../../assets/10.jpg';
 import { demos } from '../../shared/demoData';
+
 import DemoCard from './DemoCard/DemoCard';
+import LeafAnimationTitle from '../FramerAnimation/LeafAnimationTitle';
 
 const DemosProjects = () => {
+  const headerViewAmount = 0.3;
   const [isNight] = useThemeContext();
   const [demoModal, setDemoModal] = useState({ active: false, index: 0 });
   const [viewMode] = useProjectContext();
@@ -37,32 +40,20 @@ const DemosProjects = () => {
               // fill='#2c2929'
             />
           </svg>
-          {/* <svg
-          className='svg-section-transition'
-          width='1440'
-          height='146'
-          viewBox='0 0 1440 146'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            fillRule='evenodd'
-            clipRule='evenodd'
-            d='M0 142.5C42.5 69.5001 283.598 -62.5001 559.694 73.4999C835.79 209.5 1261.6 126 1440 0.499878V146H0V142.5Z'
-            // fill='#110F0F'
-          />
-        </svg> */}
         </div>
         <div className='main-content demo-content-wrapper'>
           <div className='demo-title'>
             <ElementsTranslateYtoVisibleStaggered
+              amount={headerViewAmount}
               delayBetweenLines={0}
               key={isNight ? 'DemosPrH2Dark' : 'DemosPrH2Light'}
             >
-              <h2>
-                <span>Demos/Projekte </span>
-              </h2>
-              {/* <span>Hier findest du einige Demos</span> */}
+              <LeafAnimationTitle
+                amount={headerViewAmount}
+                title='Demos/Projekte'
+                leafId='DemosLeaf'
+                leafPathId='DemosLeafPath'
+              />
             </ElementsTranslateYtoVisibleStaggered>
             <div className='viewToogle-wrapper'>
               <ViewModeToggleBtn />

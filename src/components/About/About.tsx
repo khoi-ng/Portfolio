@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import useMousePosition from '../../util/useMousePostion';
 import aboutMeBackground from '../../assets/me_holding_Laptop_background.webp';
+import LeafAnimationTitle from '../FramerAnimation/LeafAnimationTitle';
 
 export default function About() {
   const [isHovered, setIsHovered] = useState(false);
@@ -123,9 +124,13 @@ const AboutContent = ({
               <span>Über Mich !</span>{' '}
             </h2>
           ) : (
-            <h2>
-              <span>Über Mich </span>
-            </h2>
+            <LeafAnimationTitle
+              amount={1}
+              title='Über Mich'
+              leafId='AboutLeaf'
+              leafPathId='AboutLeafPath'
+              delay={2.5}
+            />
           )}
         </ElementsTranslateYtoVisibleStaggered>
 

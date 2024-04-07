@@ -1,5 +1,8 @@
 section.services-Offer {
+  // background-color: transparent !important;
+  z-index: 2;
   .services-Wrapper {
+    z-index: 3;
     max-width: 1255px;
     display: flex;
     flex-direction: column;
