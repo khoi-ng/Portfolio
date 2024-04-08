@@ -5,7 +5,7 @@ import leaf1 from '../../assets/leafs/leaf.webp';
 // import { BsLightbulbOffFill } from 'react-icons/bs';
 import { TbBulbOff, TbBulb } from 'react-icons/tb';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, MouseEvent } from 'react';
 import { ElementsTranslateYtoVisibleStaggered } from '../FramerAnimation/InvisToVisAnimations';
 
 // ------------------ Light Mode ------------------------
@@ -26,6 +26,7 @@ import parallaxFurnitureDark from '../../assets/night/parallaxFurnitare.webp';
 import parallaxRoomBackgroundDark from '../../assets/night/parallaxRoomBehind.webp';
 import parallaxTrash from '../../assets/night/parallaxTrash.webp';
 import { useThemeContext, setThemeLocalStorage } from '../../util/context';
+import { getRelativeCoordinates } from '../../util/useMousePostion';
 
 const Leaf = ({
   xPath,
@@ -98,6 +99,40 @@ const HeaderParallax = () => {
   const [lampBtnSize, setlampBtnSize] = useState({ width: 0, height: 0 });
   const [lampBtnIconSize, setlampBtnIconSize] = useState(0);
 
+  const parentWrapperParallaxRef = useRef<HTMLDivElement>(null);
+  const parentWrapperParallax = parentWrapperParallaxRef.current;
+  const parallexMeRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: parentWrapperParallaxRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const parallaxTextY = useTransform(scrollYProgress, [0, 1], ['0%', '600%']);
+  const opacityTextY = useTransform(scrollYProgress, [0, 0.5], ['100%', '0%']);
+  const parallaxBookShelfY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ['0%', '40%']
+  );
+  const parallaxRoomY = useTransform(scrollYProgress, [0, 1], ['0%', '45%']);
+
+  const [mousePosition, setMousePosition] = useState({
+    centerX: 0,
+    centerY: 0,
+  });
+
+  const [scrollYPosition, setScrollYPosition] = useState(0);
+
+  const handleScroll = () => {
+    const newScrollYPosition = window.scrollY;
+    setScrollYPosition(newScrollYPosition);
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    setMousePosition(getRelativeCoordinates(e, parentWrapperParallax));
+  };
+
   useEffect(() => {
     // all of this logic is, so that the lamp Btn follows the lamp on the Header background Image & resizes porportinally
     // https://stackoverflow.com/a/15838104/8842987
@@ -145,31 +180,13 @@ const HeaderParallax = () => {
     updateBtnPos();
 
     window.addEventListener('resize', updateBtnPos);
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('resize', updateBtnPos);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  const scrollParallaxRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: scrollParallaxRef,
-    offset: ['start start', 'end start'],
-  });
-
-  function YTransforms(beginP: string, EndP: string) {
-    return useTransform(scrollYProgress, [0, 1], [beginP, EndP]);
-  }
-
-  // const parallaxForeGroundLeafsY = YTransforms('0%', '100%');
-  // const parallaxPlantLeftY = YTransforms('0%', '30%');
-  const parallaxCouchY = YTransforms('0%', '50%');
-  const parallaxTextY = YTransforms('0%', '600%');
-  const opacityTextY = useTransform(scrollYProgress, [0, 0.5], ['100%', '0%']);
-  const parallaxBookShelfY = YTransforms('0%', '40%');
-  const parallaxMeY = YTransforms('0%', '25%');
-  const parallaxRoomY = YTransforms('0%', '45%');
-  const parallaxTrashY = YTransforms('0%', '150%');
+  }, [parentWrapperParallax]);
 
   return (
     <div
@@ -179,25 +196,11 @@ const HeaderParallax = () => {
       }}
     >
       <div
-        ref={scrollParallaxRef}
+        ref={parentWrapperParallaxRef}
+        onMouseMove={(e) => handleMouseMove(e)}
         className='header-parallax inset-0 z-0 grid place-content-center pointer-events-none'
       >
         <div className='svg-wrapper'>
-          {/* <svg
-            className='svg-section-transition'
-            width='1440'
-            height='292'
-            viewBox='0 0 1440 292'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              fillRule='evenodd'
-              clipRule='evenodd'
-              d='M0 195.5C71.5248 142.5 283.598 70.5 559.694 206.5C835.79 342.5 1261.6 125.5 1440 0V292H0V195.5Z'
-            />
-          </svg> */}
-
           <svg
             className='svg-section-transition'
             width='1440'
@@ -216,7 +219,8 @@ const HeaderParallax = () => {
         </div>
 
         <motion.div
-          className='img-div inset-0 z-7'
+          className='parallax-img img-div inset-0 z-7'
+          animate={{}}
           style={{
             backgroundImage: `url("${
               isNight ? parallaxRoomBackgroundDark : parallaxRoomBackground
@@ -227,7 +231,7 @@ const HeaderParallax = () => {
 
         <div className='img-div inset-0 z-9'>
           <motion.div
-            className='lamp-div img-div inset-0 z-9'
+            className='parallax-img lamp-div img-div inset-0 z-9'
             ref={imgDivLampRef}
             style={{
               backgroundImage: `url("${
@@ -277,10 +281,11 @@ const HeaderParallax = () => {
 
         {isNight ? (
           <motion.div
-            className='img-div inset-0 z-11'
+            className='parallax-img img-div inset-0 z-11'
+            animate={{ x: mousePosition.centerX * 2 }}
             style={{
               backgroundImage: `url("${parallaxTrash}")`,
-              y: parallaxTrashY,
+              y: mousePosition.centerY * 1.5 + scrollYPosition * 1.5,
             }}
           />
         ) : (
@@ -310,27 +315,33 @@ const HeaderParallax = () => {
         )}
 
         <motion.div
-          className='img-div inset-0 z-11'
+          className='parallax-img img-div inset-0 z-11'
+          ref={parallexMeRef}
+          animate={{
+            x: mousePosition.centerX * 15,
+          }}
           style={{
             backgroundImage: `url("${isNight ? parallaxMeDark : parallaxMe}")`,
-            y: parallaxMeY,
+            y: mousePosition.centerY * 10 + scrollYPosition * 0.25,
           }}
         />
         <motion.div
-          className='img-div inset-0 z-13'
+          className='parallax-img img-div inset-0 z-13'
           key={isNight ? parallaxCouchDark : parallaxCouch}
           initial={{
             translateY: 250,
           }}
           animate={{
             translateY: 0,
+            translateX: -5 + mousePosition.centerX * 5,
           }}
           transition={{ duration: 0.7 }}
           style={{
             backgroundImage: `url("${
               isNight ? parallaxCouchDark : parallaxCouch
             }")`,
-            y: parallaxCouchY,
+            // y: parallaxCouchY,
+            y: mousePosition.centerY * 5 + scrollYPosition * 0.5,
           }}
         />
 
@@ -348,7 +359,6 @@ const HeaderParallax = () => {
             backgroundImage: `url("${
               isNight ? parallaxForeGroundLeafsDark : parallaxForeGroundLeafs
             }")`,
-            // y: parallaxForeGroundLeafsY,
             position: 'fixed',
             backgroundPosition: 'right',
           }}
@@ -377,11 +387,12 @@ const HeaderParallax = () => {
             // y: parallaxForeGroundLeafsY,
             position: 'fixed',
             backgroundPosition: 'left',
+            // x: mousePosition.centerX * 5,
           }}
         />
         <motion.div
           // key={isNight ? 'HeaderTitleDark' : 'HeaderTitleLight'}
-          className='text-Header font-bold text-4xl  absolute z-22 '
+          className='parallax-img text-Header font-bold text-4xl  absolute z-22 '
           style={{
             y: parallaxTextY,
             opacity: opacityTextY,

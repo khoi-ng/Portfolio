@@ -8,8 +8,7 @@ const Footer = () => {
         <div className='row-container'>
           <div className='copyright'>
             <p>Duy Khoi Nguyen © 2024</p>
-            <p>Designed & Programmed with ❤️</p>
-            <p>Tools Used: PhotoShop, Figma, Krita, React, SASS, TS </p>
+            <p>Designed & Programmed</p>
           </div>
           <div className='link-icons'>
             <a href='https://github.com/khoi-ng'>

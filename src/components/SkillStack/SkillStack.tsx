@@ -8,9 +8,8 @@ import {
   FaHtml5,
 } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
-// import { TbBrandNextjs } from 'react-icons/tb';
-import { TbFileTypeXml } from 'react-icons/tb';
-
+import { TbBrandNextjs } from 'react-icons/tb';
+// import { TbFileTypeXml } from 'react-icons/tb';
 // import { EmblaOptionsType } from 'embla-carousel';
 // import AutoScroll from 'embla-carousel-auto-scroll';
 // import useEmblaCarousel from 'embla-carousel-react';
@@ -26,9 +25,9 @@ const SkillStack = () => {
     <IoLogoJavascript color='#FFE008' />,
     <FaCss3 color='#3D9DD7' />,
     <FaHtml5 color='#F16A31' />,
-    // <TbBrandNextjs color='#080808' />,
+    <TbBrandNextjs color='#080808' />,
     <FaSass color='#CF6C9C' />,
-    <TbFileTypeXml color='#DAA241' />,
+    // <TbFileTypeXml color='#DAA241' />,
   ];
 
   // const options: EmblaOptionsType = { loop: true };

@@ -282,6 +282,12 @@ footer {
     }
   }
 
+  .contact-content-wrapper {
+    .contact-content {
+      flex-wrap: wrap;
+    }
+  }
+
   .text-Header {
     h2 {
       font-size: 2rem !important;
