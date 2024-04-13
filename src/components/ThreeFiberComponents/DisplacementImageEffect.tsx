@@ -125,7 +125,7 @@ export const DisplacementImageEffect = ({
   isHovered?: boolean | null;
 }) => {
   return (
-    <Canvas className={className} camera={{ position: [0, 0, 1], fov: 52 }}>
+    <Canvas className={className} camera={{ position: [0, 0, 1], fov: 50 }}>
       <ImageWithEffect
         src={demoData.src}
         src2={demoData.src2}

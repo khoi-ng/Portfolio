@@ -19,7 +19,7 @@ const DemoPage = () => {
           <DisplacementImageEffect
             className='imgBox'
             demoData={demo}
-            aspectRatio={[1.7, 1]}
+            aspectRatio={[1.5, 1]}
           />
         </div>
       </section>

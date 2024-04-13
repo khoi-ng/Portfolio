@@ -82,7 +82,7 @@ const DemosProjects = () => {
               {/* list Gallery from Olivier Larose https://www.youtube.com/watch?v=XUYQoU_HA-8 */}
               {demos.map((demo, index) => {
                 return (
-                  <a key={`demo-line-link-${index}`}>
+                  <a href={demo.projectLink} key={`demo-line-link-${index}`}>
                     <Demo
                       index={index}
                       demo={demo}

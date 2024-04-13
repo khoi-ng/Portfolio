@@ -1,9 +1,4 @@
-import placeHolderImage from '../../src/assets/demosImg/ben-white-7BiMECHFgFY-unsplash.webp';
-import placeHolderImage2 from '../../src/assets/demosImg/jc-gellidon-TPZNooS1Meg-unsplash.webp';
-import placeHolderImage3 from '../../src/assets/demosImg/tide_trasher_x-MPuoF1Vz9pk-unsplash.webp';
-import placeHolderImage4 from '../../src/assets/demosImg/force-majeure-00tlC0Clfrs-unsplash.webp';
-import placeHolderImage5 from '../../src/assets/demosImg/maksim-larin-1vy2QcZd5FU-unsplash.webp';
-import placeHolderImage6 from '../../src/assets/demosImg/domino-164_6wVEHfI-unsplash.webp';
+import clothesProj from '../../src/assets/demosImg/clothes_Proj.png';
 
 export interface DemoData {
   id: number;
@@ -13,13 +8,15 @@ export interface DemoData {
   src: string;
   src2: string;
   color: string;
+  githubUrl?: string;
+  projectLink?: string;
 }
 
 export const demos = [
   {
     id: 0,
-    title: 'Test Title',
-    tech: 'React, Sass, Html, Typescript',
+    title: 'Demo Clothes Shop',
+    tech: 'NEXT.JS, Tailwind, Sass, Html, Typescript, Prisma, Postgress, Figma',
     // tech: (
     //   <>
     //     <FaReact />
@@ -29,34 +26,10 @@ export const demos = [
     //   </>
     // ),
     year: '2024',
-    src: placeHolderImage,
-    src2: placeHolderImage2,
+    src: clothesProj,
+    src2: clothesProj,
     color: '#000000',
-  },
-  {
-    id: 1,
-    title: 'Test Title',
-    tech: 'JS, Sass, Html',
-    year: '2024',
-    src: placeHolderImage3,
-    src2: placeHolderImage4,
-    color: '#8C8C8C',
-  },
-  {
-    id: 2,
-    title: 'Test Title',
-    // tech: (
-    //   <>
-    //     <FaReact />
-    //     <FaSass />
-    //     <FaHtml5 />
-    //     <BiLogoTypescript />
-    //   </>
-    // ),
-    tech: 'React, Sass, Html, Typescript',
-    year: '2024',
-    src: placeHolderImage5,
-    src2: placeHolderImage6,
-    color: '#EFE8D3',
+    projectLink: 'https://clothes-shop-rosy.vercel.app/',
+    githubUrl: 'https://github.com/khoi-ng/clothes-shop',
   },
 ];

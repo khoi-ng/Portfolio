@@ -16,6 +16,7 @@ import { TbBrandNextjs } from 'react-icons/tb';
 import { ElementsTranslateYtoVisibleStaggered } from '../FramerAnimation/InvisToVisAnimations';
 import { useThemeContext } from '../../util/context';
 import LeafAnimationTitle from '../FramerAnimation/LeafAnimationTitle';
+import { SiTailwindcss } from 'react-icons/si';
 
 const SkillStack = () => {
   const icons = [
@@ -23,10 +24,10 @@ const SkillStack = () => {
     // <FaVuejs color='#6FB486' />,
     // <FaDocker />,
     <IoLogoJavascript color='#FFE008' />,
-    <FaCss3 color='#3D9DD7' />,
     <FaHtml5 color='#F16A31' />,
     <TbBrandNextjs color='#080808' />,
     <FaSass color='#CF6C9C' />,
+    <SiTailwindcss color='#0FB8D4' />,
     // <TbFileTypeXml color='#DAA241' />,
   ];
 

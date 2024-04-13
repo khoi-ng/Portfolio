@@ -3,6 +3,7 @@ import { DisplacementImageEffect } from '../../ThreeFiberComponents/Displacement
 import { FaGithub } from 'react-icons/fa';
 import './DemoCard.scss';
 import { DemoData } from '../../../shared/demoData';
+import { GoProject } from 'react-icons/go';
 
 const DemoCard = ({ index, demo }: { index: number; demo: DemoData }) => {
   const [hoveredProject, setHoveredProject] = useState(false);
@@ -20,12 +21,15 @@ const DemoCard = ({ index, demo }: { index: number; demo: DemoData }) => {
           className='imgBox'
           key={`imgBox-${index}`}
           demoData={demo}
-          aspectRatio={[1.7, 1]}
+          aspectRatio={[2, 1]}
           isHovered={hoveredProject}
         />
         <div className='democard-overlay'>
           <div className='democard-overlay-content'>
-            <a href=''>
+            <a href={demo.projectLink ? demo.projectLink : ''} className='mr-2'>
+              <GoProject />
+            </a>
+            <a href={demo.githubUrl ? demo.githubUrl : ''}>
               <FaGithub />
             </a>
           </div>
@@ -35,8 +39,7 @@ const DemoCard = ({ index, demo }: { index: number; demo: DemoData }) => {
         <span className='demo-card-description'>{demo.tech}</span>
 
         <h2 className='demo-card-title'>
-          {' '}
-          <a>{demo.title}</a>
+          <a href={demo.projectLink ? demo.projectLink : ''}>{demo.title}</a>
         </h2>
 
         {/* <span className='demo-card-year'>{demo.year}</span> */}
