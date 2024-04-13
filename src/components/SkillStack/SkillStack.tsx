@@ -4,7 +4,7 @@ import {
   FaReact,
   // FaVuejs,
   FaSass,
-  FaCss3,
+  // FaCss3,
   FaHtml5,
 } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
